@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>是假的N | AIGC成长作品集</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义配色：深灰+白色 + 科技蓝点缀 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00E5FF',    // 鲜艳点缀色（科技蓝）
+                        dark: '#121212',       // 主深灰色
+                        light: '#FFFFFF',      // 主白色
+                        gray: '#1E1E1E',       // 次级深灰
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .nav-shadow {
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-light antialiased scroll-smooth">
+<!-- 导航栏 -->
+<header id="navbar" class="fixed w-full top-0 left-0 z-50 bg-dark/90 backdrop-blur-md transition-all">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-primary flex items-center gap-2">
+            <i class="fa-solid fa-robot"></i>
+            <span>是假的N</span>
+        </a>
+        <!-- 桌面端导航 -->
+        <nav class="hidden md:flex gap-6">
+            <a href="#home" class="hover:text-primary transition-colors">首页</a>
+            <a href="#works" class="hover:text-primary transition-colors">AIGC作品</a>
+            <a href="#about" class="hover:text-primary transition-colors">关于成长</a>
+            <a href="#contact" class="hover:text-primary transition-colors">联系我</a>
+        </nav>
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-dark px-4 py-3 shadow-md">
+        <div class="flex flex-col gap-3">
+            <a href="#home" class="py-2 hover:text-primary">首页</a>
+            <a href="#works" class="py-2 hover:text-primary">AIGC作品</a>
+            <a href="#about" class="py-2 hover:text-primary">关于成长</a>
+            <a href="#contact" class="py-2 hover:text-primary">联系我</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- 英雄区：开场感谢 + 成长主旨 -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4">
+        <div class="container mx-auto text-center max-w-4xl">
+            <!-- 核心感谢语 -->
+            <p class="text-lg md:text-xl text-gray-300 mb-4">感谢您能来看我的作品</p>
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
+                AIGC创作<br><span class="text-primary">成长记录馆</span>
+            </h1>
+            <!-- 成长主旨标语 -->
+            <p class="text-xl md:text-2xl font-medium text-light/90 mb-4">
+                你必须深爱自己的作品，世界才会来爱它
+            </p>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                用AI生成视频、图片、音乐，记录每一步成长，用热爱创作独一无二的作品
+            </p>
+            <a href="#works" class="inline-block bg-primary text-dark px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                浏览我的AIGC作品
+            </a>
+        </div>
+    </section>
+
+    <!-- AIGC作品展示区 -->
+    <section id="works" class="py-20 bg-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">我的AIGC作品</h2>
+                <p class="text-gray-300 max-w-xl mx-auto">涵盖AI视频、AI绘画、AI歌曲、AIGC创意设计等作品</p>
+            </div>
+
+            <!-- 作品卡片网格 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AIGC视频 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover text-dark">
+                    <img src="https://picsum.photos/600/400?random=1" alt="AIGC视频" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AIGC视频</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2">AI创意短视频</h3>
+                        <p class="text-gray-600 mb-4">AI生成动态视觉短片，沉浸式画面，流畅特效</p>
+                        <a href="#" class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                            查看作品 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AIGC图片 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover text-dark">
+                    <img src="https://picsum.photos/600/400?random=2" alt="AIGC图片" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AIGC图片</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2">AI绘画作品</h3>
+                        <p class="text-gray-600 mb-4">原创AI生成插画，风格化视觉设计，高精度画质</p>
+                        <a href="#" class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                            查看作品 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AIGC歌曲 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover text-dark">
+                    <img src="https://picsum.photos/600/400?random=3" alt="AIGC歌曲" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AIGC歌曲</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2">AI原创音乐</h3>
+                        <p class="text-gray-600 mb-4">AI作曲+作词，原创歌曲，多种风格曲风</p>
+                        <a href="#" class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                            查看作品 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 作品4 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover text-dark">
+                    <img src="https://picsum.photos/600/400?random=4" alt="AIGC创意" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AIGC创意</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2">AI视觉设计</h3>
+                        <p class="text-gray-600 mb-4">AI生成品牌视觉、海报、文创设计作品</p>
+                        <a href="#" class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                            查看作品 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 作品5 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover text-dark">
+                    <img src="https://picsum.photos/600/400?random=5" alt="AIGC动画" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AIGC动画</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2">AI动态动画</h3>
+                        <p class="text-gray-600 mb-4">AI生成2D/3D动态动画，趣味创意视觉</p>
+                        <a href="#" class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                            查看作品 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 作品6 -->
+                <div class="bg-light rounded-2xl overflow-hidden card-hover text-dark">
+                    <img src="https://picsum.photos/600/400?random=6" alt="AIGC混音" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">AIGC音频</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2">AI音效混音</h3>
+                        <p class="text-gray-600 mb-4">AI定制背景音乐、音效、音频后期处理</p>
+                        <a href="#" class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all">
+                            查看作品 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我：成长记录 + 个人信息 -->
+    <section id="about" class="py-20 bg-dark">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/3">
+                    <img src="https://picsum.photos/400/400?random=avatar" alt="是假的N" class="w-64 h-64 rounded-full object-cover mx-auto shadow-xl shadow-primary/10">
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl font-bold mb-6">关于我 · 成长记录</h2>
+                    <!-- 个人信息 -->
+                    <h3 class="text-xl text-primary font-medium mb-4">是假的N（廖凯翔）</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        一名热爱AIGC创作的创作者，专注于AI视频、AI绘画、AI音乐的探索与创作。本网页用于记录我的AIGC创作成长之路，每一个作品都是我进步的见证。
+                    </p>
+                    <!-- 核心主旨标语 -->
+                    <p class="text-light font-medium mb-6 border-l-4 border-primary pl-4 py-2">
+                        你必须深爱自己的作品，世界才会来爱它
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <span class="px-4 py-2 bg-gray rounded-full">AI视频</span>
+                        <span class="px-4 py-2 bg-gray rounded-full">AI绘画</span>
+                        <span class="px-4 py-2 bg-gray rounded-full">AI音乐</span>
+                        <span class="px-4 py-2 bg-gray rounded-full">AIGC创作</span>
+                        <span class="px-4 py-2 bg-gray rounded-full">成长记录</span>
+                    </div>
+                    <a href="#contact" class="inline-block bg-primary text-dark px-6 py-2 rounded-full hover:bg-primary/90 transition-all">
+                        与我交流创作
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我：你的专属联系方式 -->
+    <section id="contact" class="py-20 bg-gray">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-4">联系我</h2>
+            <p class="text-gray-300 mb-10">交流AIGC创作，共同成长进步</p>
+            <div class="flex flex-wrap justify-center gap-8 text-xl">
+                <!-- 邮箱 -->
+                <a href="mailto:3244276366@qq.com" class="flex flex-col items-center gap-2 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-envelope text-2xl"></i>
+                    <span>3244276366@qq.com</span>
+                </a>
+                <!-- 电话 -->
+                <a href="tel:17711529587" class="flex flex-col items-center gap-2 hover:text-primary transition-colors">
+                    <i class="fa-solid fa-phone text-2xl"></i>
+                    <span>17711529587</span>
+                </a>
+                <!-- 微信 -->
+                <a href="#" class="flex flex-col items-center gap-2 hover:text-primary transition-colors">
+                    <i class="fa-brands fa-weixin text-2xl"></i>
+                    <span>shijiadeN</span>
+                </a>
+                <!-- GitHub -->
+                <a href="#" class="flex flex-col items-center gap-2 hover:text-primary transition-colors">
+                    <i class="fa-brands fa-github text-2xl"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="bg-dark text-light py-8">
+    <div class="container mx-auto px-4 text-center">
+        <p class="mb-2">© 2025 是假的N（廖凯翔）| AIGC成长作品集</p>
+        <p class="text-gray-400 text-sm">你必须深爱自己的作品，世界才会来爱它</p>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('nav-shadow');
+        } else {
+            navbar.classList.remove('nav-shadow');
+        }
+    });
+
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // 点击移动端菜单后关闭菜单
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        });
+    });
+</script>
+</body>
+</html>
